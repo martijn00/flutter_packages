@@ -1,20 +1,50 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class NavigationSuiteScaffold extends StatelessWidget {
+class NavigationSuiteScaffold extends Scaffold {
   const NavigationSuiteScaffold({
     super.key,
     required this.navigationSuiteItems,
-    required this.child,
+    this.navigationRail,
+    super.appBar,
+    super.body,
+    super.floatingActionButton,
+    super.floatingActionButtonLocation,
+    super.floatingActionButtonAnimator,
+    super.persistentFooterButtons,
+    super.persistentFooterAlignment = AlignmentDirectional.centerEnd,
+    super.drawer,
+    super.onDrawerChanged,
+    super.endDrawer,
+    super.onEndDrawerChanged,
+    super.bottomNavigationBar,
+    super.bottomSheet,
+    super.backgroundColor,
+    super.resizeToAvoidBottomInset,
+    super.primary = true,
+    super.drawerDragStartBehavior = DragStartBehavior.start,
+    super.extendBody = false,
+    super.extendBodyBehindAppBar = false,
+    super.drawerScrimColor,
+    super.drawerEdgeDragWidth,
+    super.drawerEnableOpenDragGesture = true,
+    super.endDrawerEnableOpenDragGesture = true,
+    super.restorationId,
   });
 
   final List<NavigationSuiteItem> navigationSuiteItems;
 
-  final Widget child;
+  final NavigationRail? navigationRail;
 
   @override
+  ScaffoldState createState() => NavigationSuiteScaffoldState();
+}
+
+class NavigationSuiteScaffoldState extends ScaffoldState {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return super.build(context);
   }
 }
 
